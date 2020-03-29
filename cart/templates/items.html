@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+<div class="container">
+
+<div class="active-cyan-4 mb-4" style="padding-top: 35px">
+  <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="myFilter" onkeyup="myFunction()">
+</div>
+
+<div id="myItems">
+
+<div class="row" style="padding-top: 25px">
+
+<div class="col">
+<div class="card" style="background-color:FAFAFA">
+  <div class="card-body">
+  <img class="card-img-top" src="{% static 'images/items/SustainableTee.jpg' %}" style="width:300px; height:202px" alt="Sustainable Tee">
+    <h5 class="card-title" style="padding-top:20px">T Shirt</h5>
+    <h6 class="card-subtitle mb-2 text-muted">CDN$10</h6>
+    <p class="card-text">New</p>
+    <a href="#" class="card-link">Add to cart</a>
+  </div>
+</div>
+</div>
+
+<div class="col">
+<div class="card" style="background-color:FAFAFA">
+  <div class="card-body">
+  <center><img class="card-img-top" src="{% static 'images/items/sustainable-shawl.jpeg' %}"  style="width:180px; height:210px;" alt="Sustainable shawl"></center>
+    <h5 class="card-title" style="padding-top:14px">Shawl</h5>
+    <h6 class="card-subtitle mb-2 text-muted">CDN$15</h6>
+    <p class="card-text">New</p>
+    <a href="#" class="card-link">Add to cart</a>
+  </div>
+</div>
+</div>
+
+<div class="col">
+<div class="card" style="background-color:FAFAFA">
+  <div class="card-body">
+  <center><img class="card-img-top" src="{% static 'images/items/sustainable-jeans.jpg' %}" style="width:180px; height:210px; alt="Sustainable Jeans"></center>
+    <h5 class="card-title" style="padding-top:14px">Jeans</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Free</h6>
+    <p class="card-text">Used</p>
+    <a href="#" class="card-link">Add to cart</a>
+  </div>
+</div>
+</div>
+
+</div>
+
+<div class="row" style="padding-top: 25px">
+
+<div class="col">
+<div class="card" style="background-color:FAFAFA">
+  <div class="card-body">
+  <img class="card-img-top" src="{% static 'images/items/sustainable-shoes.jpg' %}" alt="Card image cap">
+    <h5 class="card-title" style="padding-top:14px">Shoes</h5>
+    <h6 class="card-subtitle mb-2 text-muted">CDN$14</h6>
+    <p class="card-text">Used</p>
+    <a href="#" class="card-link">Add to cart</a>
+  </div>
+</div>
+</div>
+
+<div class="col">
+<div class="card" style="background-color:FAFAFA">
+  <div class="card-body">
+  <center><img class="card-img-top" src="{% static 'images/items/sustainable-winterjacket.jpg' %}" style="width:220px; height:210px" alt="Card image cap"></center>
+    <h5 class="card-title" style="padding-top:10px">Winter Jacket</h5>
+    <h6 class="card-subtitle mb-2 text-muted">CDN$40</h6>
+    <p class="card-text">Used</p>
+    <a href="#" class="card-link">Add to cart</a>
+  </div>
+</div>
+</div>
+
+<div class="col">
+<div class="card"style="background-color:FAFAFA">
+  <div class="card-body">
+  <img class="card-img-top" src="{% static 'images/items/sustainable-bedsheet.jpg' %}" style="height:210px" alt="Card image cap">
+    <h5 class="card-title" style="padding-top:10px">Bedsheet</h5>
+    <h6 class="card-subtitle mb-2 text-muted">CDN$25</h6>
+    <p class="card-text">New</p>
+    <a href="#" class="card-link">Add to cart</a>
+  </div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+function myFunction() {
+    var input, filter, cards, cardContainer, h5, title, i;
+    input = document.getElementById("myFilter");
+    filter = input.value.toUpperCase();
+    cardContainer = document.getElementById("myItems");
+    cards = cardContainer.getElementsByClassName("card");
+    for (i = 0; i < cards.length; i++) {
+        title = cards[i].querySelector(".card-body h5.card-title");
+        if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+{% endblock %}

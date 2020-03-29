@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+<div class="container">
+
+<div class="active-cyan-4 mb-4" style="padding-top: 35px">
+  <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="myFilter" onkeyup="myFunction()">
+</div>
+
+<div id="myItems">
+
+<div class="row" style="padding-top: 25px">
+
+<div class="col">
+<div class="card" style="background-color:FAFAFA">
+  <div class="card-body">
+  <iframe width="300" height="170" src="https://www.youtube.com/embed/_EFp-6azUMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h5 class="card-title" style="padding-top: 20px">T Shirt</h5>
+    <p class="card-text">Reuse your old T-shirts and make something awesome!</p>
+  </div>
+</div>
+</div>
+
+<div class="col">
+<div class="card" style="background-color:FAFAFA">
+  <div class="card-body">
+  <iframe width="300" height="170" src="https://www.youtube.com/embed/DsVOsN6Ivb8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h5 class="card-title" style="padding-top: 20px">Bedsheets</h5>
+    <p class="card-text">You do not know what can be made out of used bedsheets!</p>
+  </div>
+</div>
+</div>
+
+<div class="col">
+<div class="card" style="background-color:FAFAFA">
+  <div class="card-body">
+  <iframe width="300" height="170" src="https://www.youtube.com/embed/BEchvxS7KN8?start=19" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h5 class="card-title" style="padding-top: 20px">Plastic Bags</h5>
+    <p class="card-text">Did you know a basket could be made out of those plastic bags?</p>
+  </div>
+</div>
+</div>
+
+</div>
+
+<div class="row" style="padding-top: 25px">
+
+<div class="col">
+<div class="card" style="background-color:FAFAFA">
+  <div class="card-body">
+  <iframe width="300" height="170" src="https://www.youtube.com/embed/ZQxJ1yyTl5Q?start=3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h5 class="card-title" style="padding-top: 20px">Paper</h5>
+    <p class="card-text">Make a lot of things from used papers.</p>
+  </div>
+</div>
+</div>
+
+<div class="col">
+<div class="card" style="background-color:FAFAFA">
+  <div class="card-body">
+  <iframe width="300" height="170" src="https://www.youtube.com/embed/Q-0PCfZQtdw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h5 class="card-title" style="padding-top: 20px">Wood</h5>
+    <p class="card-text">Old wood can be used!</p>
+  </div>
+</div>
+</div>
+
+<div class="col">
+<div class="card" style="background-color:FAFAFA">
+  <div class="card-body">
+  <iframe width="300" height="170" src="https://www.youtube.com/embed/cMejndPYn0c?start=5" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h5 class="card-title" style="padding-top: 20px">Electronic components</h5>
+    <p class="card-text">Yes! Electronic components can be reused!</p>
+  </div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+function myFunction() {
+    var input, filter, cards, cardContainer, h5, title, i;
+    input = document.getElementById("myFilter");
+    filter = input.value.toUpperCase();
+    cardContainer = document.getElementById("myItems");
+    cards = cardContainer.getElementsByClassName("card");
+    for (i = 0; i < cards.length; i++) {
+        title = cards[i].querySelector(".card-body h5.card-title");
+        if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+{% endblock %}
